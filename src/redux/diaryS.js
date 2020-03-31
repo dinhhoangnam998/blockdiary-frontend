@@ -9,9 +9,8 @@ const addDiary = () => (dispatch, getState) => {
   dispatch((addTempDiary(diary)));
   dispatch(resetA());
 
-  const serverUrl = (process.env.NODE_ENV !== 'production') ? process.env.REACT_APP_SERVER_URL : process.env.SERVER_URL;
   return (
-    fetch(`${serverUrl}/diaries`, {
+    fetch(`http://localhost:3001/diaries`, {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(diary)
