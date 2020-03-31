@@ -1,11 +1,13 @@
 import React from 'react'
-
+import { useDispatch } from "react-redux"
+import { addDiary } from "../../redux/diaryS"
 function ButtonBar() {
+  const dispatch = useDispatch();
   return (
-    <div>
+    <div className="mt-2">
       <div className="text-right">
-        <button className="btn btn-light">Clear</button>
-        <button className="btn btn-success">Save</button>
+        <button className="btn btn-light d-inline-block mr-1" type="reset">Clear</button>
+        <button className="btn btn-success" onClick={() => dispatch(addDiary())}>Save</button>
       </div>
     </div>
   )

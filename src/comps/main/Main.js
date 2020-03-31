@@ -5,11 +5,14 @@ import Title from './Title';
 
 function Main() {
   return (
-    <div className="mt-3 border p-2">
+    <div className="mt-1">
       <Title></Title>
-      <DayDiary></DayDiary>
-      <LoadMoreBar></LoadMoreBar>
+      <div className="border mt-2 py-3 px-2">
+        <DayDiary></DayDiary>
+        <LoadMoreBar></LoadMoreBar>
+      </div>
     </div>
+
   )
 }
 

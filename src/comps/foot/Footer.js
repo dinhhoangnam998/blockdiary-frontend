@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className="mt-1 text-right small">
+    <div className="mt-2 text-right small">
       This app created by Dinh Hoang Nam!
     </div>
   )

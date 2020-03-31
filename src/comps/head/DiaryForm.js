@@ -4,9 +4,11 @@ import ButtonBar from './ButtonBar';
 
 function DiaryForm() {
   return (
-    <div className="mt-2"> 
-      <DiaryTextbox></DiaryTextbox>
-      <ButtonBar></ButtonBar>
+    <div className="mt-2">
+      <form>
+        <DiaryTextbox></DiaryTextbox>
+        <ButtonBar></ButtonBar>
+      </form>
     </div>
   )
 }
