@@ -4,13 +4,23 @@ import { resetA } from './textboxS'
 const addTempDiary = createAction('add_temp_diary');
 const updateTempDiary = createAction('update_temp_diary');
 
+const initState = createAction('fetch_init_state');
+
+import { SERVER_URL } from '../config/config'
+
+const fetchInitState = () => (dispatch, getState) => {
+  return (
+    fetch(`${SERVER_URL}/diaries`).then(res => res.json()).then(diaries => dispatch(initState(diaries)))
+  )
+}
+
 const addDiary = () => (dispatch, getState) => {
   let diary = { content: getState().textboxS.value };
-  dispatch((addTempDiary(diary)));
+  dispatch((addTempDiary(Object.assign({}, diary))));
   dispatch(resetA());
 
   return (
-    fetch(`http://localhost:3001/diaries`, {
+    fetch(`${SERVER_URL}/diaries`, {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(diary)
@@ -33,9 +43,14 @@ const updateTempDiaryH = (state, action) => {
   return state;
 }
 
+const initStateH = (state, action) => {
+  return action.payload;
+}
+
 const diaryR = createReducer({ diaries: [] }, {
   [addTempDiary]: addTempDiaryH,
   [updateTempDiary]: updateTempDiaryH,
+  [initState]: initStateH,
 })
 
-export { diaryR as default, addDiary }
+export { diaryR as default, addDiary, fetchInitState }
