@@ -3,7 +3,7 @@ import React from 'react'
 function Title() {
   return (
     <div className="my-3">
-      <h2 className="text-center">Welcom to my BlockDiary App!</h2>
+      <div className="text-center" style={{fontSize: '2rem'}}>Welcom to my BlockDiary App v0.1!</div>
     </div>
   )
 }

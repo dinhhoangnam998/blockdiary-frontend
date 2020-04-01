@@ -7,7 +7,7 @@ function Main() {
   return (
     <div className="mt-1">
       <Title></Title>
-      <div className="border mt-2 py-3 px-2">
+      <div className="border mt-2 pt-3 pb-2 px-2">
         <DiaryList></DiaryList>
         <LoadMoreBar></LoadMoreBar>
       </div>

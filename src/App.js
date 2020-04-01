@@ -14,7 +14,7 @@ function App() {
   }, [])
   return (
     <>
-      <div className="container" style={{ maxWidth: 786 }}>
+      <div className="container my-3" style={{ maxWidth: 786 }}>
         <Header></Header>
         <Main></Main>
         <Footer></Footer>
