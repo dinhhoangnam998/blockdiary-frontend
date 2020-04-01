@@ -1,5 +1,4 @@
 import React from 'react'
-import DayDiary from './DayDiary'
 import LoadMoreBar from './LoadMoreBar'
 import Title from './Title';
 import DiaryList from './DiaryList';

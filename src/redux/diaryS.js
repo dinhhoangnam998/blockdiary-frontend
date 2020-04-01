@@ -1,12 +1,10 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 import { resetA } from './textboxS'
+import { SERVER_URL } from '../config/config'
 
 const addTempDiary = createAction('add_temp_diary');
 const updateTempDiary = createAction('update_temp_diary');
-
 const initState = createAction('fetch_init_state');
-
-import { SERVER_URL } from '../config/config'
 
 const fetchInitState = () => (dispatch, getState) => {
   return (
@@ -44,7 +42,7 @@ const updateTempDiaryH = (state, action) => {
 }
 
 const initStateH = (state, action) => {
-  return action.payload;
+  return { diaries: action.payload };
 }
 
 const diaryR = createReducer({ diaries: [] }, {
